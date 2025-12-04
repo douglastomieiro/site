@@ -1,7 +1,26 @@
-<embed
-  src="/catalogos/tomieirostore.pdf"
-  type="application/pdf"
-  width="100%"
-  height="100%"
-  title="Embedded PDF Viewer"
-/>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Baixando arquivo...</title>
+</head>
+
+<body>
+  <script>
+    const link = document.createElement('a');
+    link.href = '/catalogos/tomieirostore.pdf';
+    link.download = 'tomieirostore.pdf';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 800);
+  </script>
+
+  <p>O download deve começar automaticamente...</p>
+</body>
+
+</html>
