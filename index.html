@@ -1,51 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casas Modulares e Containers | Estruturas Modelo</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicon/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="images/favicon/site.webmanifest" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <meta
-      name="description"
-      content="Casas modulares, aluguel de container e caminhão Munck, nossas casas modulares são fáceis de montar, desmontar e transportar!"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16689668202"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "AW-16689668202");
-    </script>
-    <script type="application/ld+json">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casas Modulares e Containers | Estruturas Modelo</title>
+  <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="images/favicon/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description"
+    content="Casas modulares, aluguel de container e caminhão Munck, nossas casas modulares são fáceis de montar, desmontar e transportar!" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16689668202"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "AW-16689668202");
+  </script>
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "WebSite",
@@ -58,367 +39,248 @@
         }
       }
     </script>
-  </head>
+</head>
 
-  <body class="opacidade">
-    <!-- Overlay para bloquear interação
-    <div id="overlay" class="overlay"></div>
-
-    Pop-up 
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <h1>LANÇAMENTO!</h1>
-        <img
-          src="images/casa_modular.jpg"
-          alt="Casa Modular Container"
-          class="popup-image"
-        />
-        <p>Dimensões:</p>
-        <p>5,95 x 3 x 2,80 m</p>
-        <p>R$ 25.000,00 + Frete</p>
-        <button id="closePopup">Continuar para o site</button>
-      </div>
+<body class="opacidade">
+  <!-- Cabeçalho -->
+  <header id="header">
+    <div class="texto-header">
+      <img src="images/st_logo.png" alt="Logo Estruturas Modelo" class="logo" />
+      <p>Estruturas Modelo</p>
     </div>
-    -->
+    <nav>
+      <ul>
+        <li>
+          <a href="#casaModular" title="Casa Modular">Casa Container Modular</a>
+        </li>
+        <li><a href="#container" title="Container">Locação Container</a></li>
+        <li><a href="#munck" title="Munck">Locação Munck</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Cabeçalho -->
-    <header id="header">
-      <div class="texto-header">
-        <img
-          src="images/st_logo.png"
-          alt="Logo Estruturas Modelo"
-          class="logo"
-        />
-        <p>Estruturas Modelo</p>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#casaModular" title="Casa Modular"
-              >Casa Container Modular</a
-            >
-          </li>
-          <li><a href="#container" title="Container">Locação Container</a></li>
-          <li><a href="#munck" title="Munck">Locação Munck</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <!-- Primeira Section -->
-      <section
-        id="casaModular"
-        class="section reverse"
-        style="
+  <main>
+    <!-- Primeira Section -->
+    <section id="casaModular" class="section" style="
           background-image: url('images/sections/section1/foto_casa_modular4.jpg');
-        "
-      >
-        <div class="info">
-          <h2>Casa Container Modular</h2>
-          <p>
-            Monte seu Airbnb com nosso módulo-base focado em resistência e
-            funcionalidade, essa unidade combina estrutura metálica robusta com
-            isolamento térmico eficiente. Uma solução prática, transportável e
-            adaptável a diferentes cenários.
-          </p>
-          <br />
-          <p>Posicione portas e janelas onde preferir!</p>
-          <p>Dimensões - 5,95 x 3 x 2,80 m</p>
-          <p>Peso total - 1.200 Kg</p>
-          <p>Valor - R$ 25.000,00 + Frete</p>
-          <a href="/casa/container.pdf" download target="_blank" class="casacontainer">
-            Detalhes e ficha técnica do container
+        ">
+      <div class="info">
+        <h1>Casa Modular Container</h1>
+        <p>Nosso kit modular completo é uma solução inteligente para quem busca construir casas, escritórios ou lojas
+          com rapidez. Conta com estrutura em aço de alta resistência e isolamento térmico em lã de vidro, garantindo
+          máxima durabilidade, conforto térmico e excelente isolamento acústico em qualquer clima. O design é totalmente
+          flexível: você define o posicionamento de portas e janelas de acordo com a necessidade do seu projeto.</p>
+        <br>
+        <p>Dimensões: 5,95 x 3 x 2,80m</p>
+        <p>Peso total: 1.200 Kg</p>
+        <p>Preço: R$ 18.000,00</p>
+        <br>
+        <div class="enfase">
+          <p>Não realizamos envios. A mercadoria deve ser retirada no local por conta do cliente.</p>
+        </div>
+        <div class="botoes">
+          <a href="/casa/container.pdf" download target="_blank" rel="noopener noreferrer" class="casacontainer">
+            Mais informações
           </a>
-          <a
-            href="https://wa.me/5519996842183"
-            class="whatsapp-button2"
-            target="_blank"
-          >
+          <a href="https://wa.me/5519996842183" class="whatsapp-button2" target="_blank" rel="noopener noreferrer">
             Garanta a sua
-            <img
-              src="images/wp_icon.png"
-              alt="Icone WhatsApp"
-              class="whatsapp-icon"
-            />
+            <img src="images/wp_icon.png" alt="Icone WhatsApp" class="whatsapp-icon" />
           </a>
         </div>
-        <div class="gallery">
-          <div class="square">
-            <img
-              src="images/sections/section1/foto_casa_modular2.jpg"
-              alt="Foto"
-              data-src="images/sections/section1/foto_casa_modular2.jpg"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/foto_casa_modular4.jpg"
-              alt="Foto"
-              data-src="images/sections/section1/foto_casa_modular4.jpg"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/foto_casa_modular1.jpg"
-              alt="Foto"
-              data-src="images/sections/section1/foto_casa_modular1.jpg"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/foto_casa_modular3.jpg"
-              alt="Foto"
-              data-src="images/sections/section1/foto_casa_modular3.jpg"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/miniatura_video_casa_modular2.jpg"
-              data-type="video"
-              data-src="images/sections/section1/video_casa_modular2.mp4"
-              alt="Video 2"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/miniatura_video_casa_modular1.jpg"
-              data-type="video"
-              data-src="images/sections/section1/video_casa_modular1.mp4"
-              alt="Video 1"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/miniatura_video_casa_modular4.jpg"
-              data-type="video"
-              data-src="images/sections/section1/video_casa_modular4.mp4"
-              alt="Video 4"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section1/miniatura_video_casa_modular3.jpg"
-              data-type="video"
-              data-src="images/sections/section1/video_casa_modular3.mp4"
-              alt="Video 3"
-            />
-          </div>
-        </div>
-      </section>
-      <!-- Segunda Section -->
-      <section
-        id="container"
-        class="section"
-        style="
-          background-image: url('images/sections/section2/foto_container6.jpg');
-        "
-      >
-        <div class="info">
-          <h1>Locação Container Para Obra</h1>
-          <p>
-            Locação de containers com banheiro interno, prontos para uso em
-            obras, eventos ou espaços temporários. Os banheiros são projetados
-            de acordo com as normas regulatórias vigentes.
-          </p>
-          <br />
-          <p>Dimensões: 4 m x 2 m x 2 m</p>
-          <p>Mensalidade: R$ 420,00</p>
-          <p>Locação mínima: 90 dias</p>
-          <a
-            href="https://wa.me/5519996842183"
-            class="whatsapp-button2"
-            target="_blank"
-          >
-            Alugar agora
-            <img
-              src="images/wp_icon.png"
-              alt="Icone WhatsApp"
-              class="whatsapp-icon"
-            />
-          </a>
-        </div>
-        <div class="gallery">
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container1.jpg"
-              alt="Foto"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container2.jpg"
-              alt="Foto"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container3.jpg"
-              alt="Foto"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container4.jpg"
-              alt="Foto"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container5.jpg"
-              alt="Foto"
-            />
-          </div>
-          <div class="square">
-            <img
-              src="images/sections/section2/foto_container6.jpg"
-              alt="Foto"
-            />
-          </div>
-        </div>
-      </section>
 
-      <!-- Terceira Section -->
-      <section
-        id="munck"
-        class="section reverse"
-        style="
-          background-image: url('images/sections/section3/foto_munck7.jpg');
-        "
-      >
-        <div class="info">
-          <h2>Locação Caminhão Munck</h2>
-          <p>
-            Caminhão Munck para locação, indicado para serviços que envolvem
-            movimentação, elevação ou apoio operacional em diferentes contextos.
-            Útil em obras, manutenções, instalações e outros trabalhos em altura
-            ou com cargas.
-          </p>
-          <br />
-
-          <p>Capacidade: 2 Toneladas</p>
-          <p>Altura máxima: 15 Metros</p>
-          <a
-            href="https://wa.me/5519996842183"
-            class="whatsapp-button2"
-            target="_blank"
-          >
-            Solicitar orçamento
-            <img
-              src="images/wp_icon.png"
-              alt="Icone WhatsApp"
-              class="whatsapp-icon"
-            />
-          </a>
+      </div>
+      <div class="gallery">
+        <div class="square">
+          <img src="images/sections/section1/foto_casa_modular2.jpg" loading="lazy"
+            data-src="images/sections/section1/foto_casa_modular2.jpg" />
         </div>
-        <div class="gallery">
-          <div class="square">
-            <img src="images/sections/section3/foto_munck1.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck2.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck3.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck4.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck5.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck6.jpg" alt="Foto" />
-          </div>
-          <div class="square">
-            <img src="images/sections/section3/foto_munck7.jpg" alt="Foto" />
-          </div>
+        <div class="square">
+          <img src="images/sections/section1/foto_casa_modular4.jpg" loading="lazy"
+            data-src="images/sections/section1/foto_casa_modular4.jpg" />
         </div>
-      </section>
-    </main>
-
-    <!-- Botão do WhatsApp -->
-    <a
-      href="https://wa.me/5519996842183"
-      class="whatsapp-button"
-      target="_blank"
-    >
-      <img src="images/wp_icon.png" alt="Icone WhatsApp" />
-    </a>
-
-    <!-- Rodapé -->
-    <footer>
-      <div class="footer-content">
-        <!-- Mapa do Google -->
-        <div class="footer-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.5028110104477!2d-47.90578182469984!3d-22.56029017950054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7b012a2055555%3A0x41f4f03c5ab065b8!2sEstruturas%20Modelo!5e0!3m2!1spt-BR!2sbr!4v1738528810243!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            aria-label="Mapa da localização da empresa"
-          ></iframe>
+        <div class="square">
+          <img src="images/sections/section1/foto_casa_modular1.jpg" loading="lazy"
+            data-src="images/sections/section1/foto_casa_modular1.jpg" />
         </div>
-
-        <div class="footer-address">
-          <p>Rua Jorge de Toledo, 115</p>
-          <p>Recanto das Águas</p>
-          <p>São Pedro - SP</p>
-          <p>CEP: 13522-044</p>
-          <a href="tel:+5519996842183">
-            <p><i class="fa-solid fa-phone"></i> (19) 99684-2183</p>
-          </a>
-          <a
-            href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp?cnpj=08.978.002/0001-61"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>
-              <i class="fa-solid fa-file-lines"></i> CNPJ 08.978.002/0001-61
-            </p>
-          </a>
-          <div class="social-buttons">
-            <a
-              href="https://bitcoin.org/pt_BR/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class="bitcoin-button">
-                <i class="fa-brands fa-bitcoin"></i>
-              </button>
-            </a>
-            <a
-              href="https://www.facebook.com/estruturastomieiro"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class="facebook-button">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-            </a>
-            <a
-              href="https://www.instagram.com/estruturas_modelo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class="instagram-button">
-                <i class="fab fa-instagram"></i>
-              </button>
-            </a>
-          </div>
+        <div class="square">
+          <img src="images/sections/section1/foto_casa_modular3.jpg" loading="lazy"
+            data-src="images/sections/section1/foto_casa_modular3.jpg" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section1/miniatura_video_casa_modular2.jpg" data-type="video"
+            data-src="images/sections/section1/video_casa_modular2.mp4" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section1/miniatura_video_casa_modular1.jpg" data-type="video"
+            data-src="images/sections/section1/video_casa_modular1.mp4" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section1/miniatura_video_casa_modular4.jpg" data-type="video"
+            data-src="images/sections/section1/video_casa_modular4.mp4" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section1/miniatura_video_casa_modular3.jpg" data-type="video"
+            data-src="images/sections/section1/video_casa_modular3.mp4" />
         </div>
       </div>
-    </footer>
+    </section>
+    <!-- Segunda Section -->
+    <section id="container" class="section" style="
+          background-image: url('images/sections/section2/foto_container6.jpg');
+        ">
+      <div class="info">
+        <h2>Locação Container Para Obra</h2>
+        <p>
+          Locação de containers com banheiro interno, prontos para uso em
+          obras, eventos ou espaços temporários. Os banheiros são projetados
+          de acordo com as normas regulatórias vigentes.
+        </p>
+        <br />
+        <p>Dimensões: 4 m x 2 m x 2 m</p>
+        <p>Mensalidade: R$ 420,00</p>
+        <p>Locação mínima: 90 dias</p>
+        <a href="https://wa.me/5519996842183" class="whatsapp-button2" target="_blank" rel="noopener noreferrer">
+          Alugar agora
+          <img src="images/wp_icon.png" alt="Icone WhatsApp" class="whatsapp-icon" />
+        </a>
+      </div>
+      <div class="gallery">
+        <div class="square">
+          <img src="images/sections/section2/foto_container1.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section2/foto_container2.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section2/foto_container3.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section2/foto_container4.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section2/foto_container5.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section2/foto_container6.jpg" loading="lazy" />
+        </div>
+      </div>
+    </section>
 
-    <!-- Modal para imagens ampliadas -->
-    <div id="imageModal" class="modal">
-      <span id="closeModal" class="close">&times;</span>
-      <img id="modalImage" class="modal-content" src="" alt="Imagem ampliada" />
-      <video id="modalVideo" controls style="display: none"></video>
+    <!-- Terceira Section -->
+    <section id="munck" class="section" style="
+          background-image: url('images/sections/section3/foto_munck7.jpg');
+        ">
+      <div class="info">
+        <h2>Locação Caminhão Munck</h2>
+        <p>
+          Caminhão Munck para locação, indicado para serviços que envolvem
+          movimentação, elevação ou apoio operacional em diferentes contextos.
+          Útil em obras, manutenções, instalações e outros trabalhos em altura
+          ou com cargas.
+        </p>
+        <br />
+
+        <p>Capacidade: 2 Toneladas</p>
+        <p>Altura máxima: 15 Metros</p>
+        <a href="https://wa.me/5519996842183" class="whatsapp-button2" target="_blank" rel="noopener noreferrer">
+          Solicitar orçamento
+          <img src="images/wp_icon.png" alt="Icone WhatsApp" class="whatsapp-icon" />
+        </a>
+      </div>
+      <div class="gallery">
+        <div class="square">
+          <img src="images/sections/section3/foto_munck1.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck2.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck3.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck4.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck5.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck6.jpg" loading="lazy" />
+        </div>
+        <div class="square">
+          <img src="images/sections/section3/foto_munck7.jpg" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão do WhatsApp -->
+  <a href="https://wa.me/5519996842183" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+    <img src="images/wp_icon.png" alt="Icone WhatsApp" />
+  </a>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.5028110104477!2d-47.90578182469984!3d-22.56029017950054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7b012a2055555%3A0x41f4f03c5ab065b8!2sEstruturas%20Modelo!5e0!3m2!1spt-BR!2sbr!4v1738528810243!5m2!1spt-BR!2sbr"
+          width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa da localização da empresa"></iframe>
+      </div>
+
+      <div class="footer-address">
+        <p>Rua Jorge de Toledo, 115</p>
+        <p>Recanto das Águas</p>
+        <p>São Pedro - SP</p>
+        <p>CEP: 13522-044</p>
+        <a href="tel:+5519996842183">
+          <p><i class="fa-solid fa-phone"></i> (19) 99684-2183</p>
+        </a>
+        <a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp?cnpj=08.978.002/0001-61"
+          target="_blank" rel="noopener noreferrer">
+          <p>
+            <i class="fa-solid fa-file-lines"></i> CNPJ 08.978.002/0001-61
+          </p>
+        </a>
+        <div class="social-buttons">
+          <a href="https://bitcoin.org/pt_BR/" target="_blank" rel="noopener noreferrer">
+            <button class="bitcoin-button">
+              <i class="fa-brands fa-bitcoin"></i>
+            </button>
+          </a>
+          <a href="https://www.facebook.com/estruturastomieiro" target="_blank" rel="noopener noreferrer">
+            <button class="facebook-button">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </a>
+          <a href="https://www.instagram.com/estruturas_modelo" target="_blank" rel="noopener noreferrer">
+            <button class="instagram-button">
+              <i class="fab fa-instagram"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal para imagens ampliadas -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+
+    <button id="closeModal" class="close" aria-label="Fechar modal">&times;</button>
+
+    <div class="modal-container">
+      <img id="modalImage" class="modal-content" src="" alt="Conteúdo ampliado" style="display: none;" />
+
+      <video id="modalVideo" class="modal-content" controls style="display: none;">
+        <source src="" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div id="caption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
