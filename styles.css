@@ -3,9 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-::selection { background: rgba(204, 17, 17, 0.15); }
 
 /* === Variáveis === */
 :root {
