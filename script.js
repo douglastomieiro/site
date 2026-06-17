@@ -1,22 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. POP-UP ---
-  const popup = document.getElementById("popup");
-  const overlay = document.getElementById("overlay");
-  const closePopup = document.getElementById("closePopup");
 
-  if (popup && overlay && !sessionStorage.getItem("popupClosed")) {
-    popup.style.display = "block";
-    overlay.style.display = "block";
-  }
-
-  const closePop = () => {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    sessionStorage.setItem("popupClosed", "true");
-  };
-
-  closePopup?.addEventListener("click", closePop);
-  overlay?.addEventListener("click", closePop);
+  // --- 1. FADE-IN DA PÁGINA ---
+  document.querySelectorAll(".opacidade").forEach(el => {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.1 }).observe(el);
+  });
+  // Fallback: garante visibilidade mesmo se o observer não disparar
+  setTimeout(() => document.querySelectorAll(".opacidade").forEach(el => el.classList.add("visible")), 2500);
 
   // --- 2. ROLAGEM SUAVE ---
   document.querySelectorAll("header nav ul li a").forEach((anchor) => {
@@ -24,54 +15,108 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const targetId = anchor.getAttribute("href")?.substring(1);
       const targetSection = document.getElementById(targetId);
-
       if (targetSection) {
         const hHeight = document.getElementById("header")?.offsetHeight || 0;
-        window.scrollTo({
-          top: targetSection.offsetTop - hHeight,
-          behavior: "smooth",
-        });
+        window.scrollTo({ top: targetSection.offsetTop - hHeight, behavior: "smooth" });
       }
     });
   });
 
-  // --- 3. MODAL DE GALERIA ---
+  // --- 3. MENU HAMBÚRGUER ---
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("main-nav");
+
+  navToggle?.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Fecha o menu ao clicar em um link
+  nav?.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      navToggle?.classList.remove("open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener("click", (e) => {
+    if (nav?.classList.contains("open") && !nav.contains(e.target) && !navToggle.contains(e.target)) {
+      nav.classList.remove("open");
+      navToggle?.classList.remove("open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // --- 4. INDICADOR DE SEÇÃO ATIVA NO NAV ---
+  const sections = document.querySelectorAll(".section");
+  const navLinks = document.querySelectorAll("header nav ul li a");
+
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
+      }
+    });
+  }, { threshold: 0.45 });
+
+  sections.forEach(s => activeSectionObserver.observe(s));
+
+  // --- 5. BOTÃO WP FLUTUANTE — expande quando o usuário para de rolar ---
+  const wpFloat = document.querySelector(".whatsapp-button");
+  let scrollTimer;
+
+  const expandWp = () => wpFloat?.classList.add("wp-expanded");
+  const collapseWp = () => wpFloat?.classList.remove("wp-expanded");
+
+  window.addEventListener("scroll", () => {
+    collapseWp();
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(expandWp, 1400);
+  }, { passive: true });
+
+  // Mostra expandido na primeira visita após 2s
+  setTimeout(expandWp, 2000);
+
+  // --- 6. MODAL DE GALERIA ---
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const modalVideo = document.getElementById("modalVideo");
-  const closeBtn = document.getElementById("closeModal"); // Pega o span do HTML
+  const closeBtn = document.getElementById("closeModal");
 
-  // Seleciona as imagens que funcionam como gatilho
   const items = Array.from(document.querySelectorAll(".gallery .square img"));
   let currentIndex = -1;
 
   if (modal && modalImg) {
-    // Criação dos botões de navegação
     const prevBtn = document.createElement("button");
     const nextBtn = document.createElement("button");
-    prevBtn.className = "modal-prev"; nextBtn.className = "modal-next";
-    prevBtn.innerHTML = "‹"; nextBtn.innerHTML = "›";
+    prevBtn.className = "modal-prev";
+    nextBtn.className = "modal-next";
+    prevBtn.innerHTML = "&#8249;";
+    nextBtn.innerHTML = "&#8250;";
     modal.append(prevBtn, nextBtn);
 
     const closeModalFunc = () => {
       modal.style.display = "none";
-      modalVideo.pause(); // Para o vídeo ao fechar
-      modalVideo.src = ""; // Limpa o buffer
+      modalVideo.pause();
+      modalVideo.src = "";
     };
 
     const renderItem = (index) => {
       const item = items[index];
       const isVideo = item.dataset.type === "video";
-
-      // Reset total
       modalImg.style.display = "none";
       modalVideo.style.display = "none";
       modalVideo.pause();
-
       if (isVideo) {
         modalVideo.src = item.dataset.src;
         modalVideo.style.display = "block";
-        modalVideo.play().catch(() => { });
+        modalVideo.play().catch(() => {});
       } else {
         modalImg.src = item.dataset.src || item.src;
         modalImg.alt = item.alt;
@@ -92,15 +137,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Eventos de Clique
     prevBtn.onclick = (e) => { e.stopPropagation(); navigate(-1); };
     nextBtn.onclick = (e) => { e.stopPropagation(); navigate(1); };
-
-    // Fechar ao clicar no fundo ou no botão X
     closeBtn.onclick = closeModalFunc;
     modal.onclick = (e) => { if (e.target === modal) closeModalFunc(); };
 
-    // Teclado
     document.addEventListener("keydown", (e) => {
       if (modal.style.display !== "block") return;
       if (e.key === "Escape") closeModalFunc();
@@ -109,12 +150,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 4. OBSERVER DE ANIMAÇÃO ---
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll(".opacidade").forEach(el => observer.observe(el));
 });

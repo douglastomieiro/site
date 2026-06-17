@@ -15,6 +15,7 @@
   <meta name="description"
     content="Casas modulares, aluguel de container e caminhão Munck, nossas casas modulares são fáceis de montar, desmontar e transportar!" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript><style>body { opacity: 1 !important; }</style></noscript>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16689668202"></script>
   <script>
@@ -31,12 +32,7 @@
         "@context": "https://schema.org/",
         "@type": "WebSite",
         "name": "Casas Modulares e Containers | Estruturas Modelo",
-        "url": "https://www.estruturasmodelo.com.br/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "{search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://www.estruturasmodelo.com.br/"
       }
     </script>
 </head>
@@ -48,13 +44,18 @@
       <img src="images/st_logo.png" alt="Logo Estruturas Modelo" class="logo" />
       <p>Estruturas Modelo</p>
     </div>
-    <nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <ul>
+        <li><a href="#container" title="Container">Container</a></li>
         <li>
-          <a href="#casaModular" title="Casa Modular">Casa Container Modular</a>
+          <a href="#casaModular" title="Casa Modular">Casa Modular</a>
         </li>
-        <li><a href="#container" title="Container">Locação Container</a></li>
-        <li><a href="#munck" title="Munck">Locação Munck</a></li>
+        <li><a href="#munck" title="Munck">Munck</a></li>
       </ul>
     </nav>
   </header>
@@ -65,7 +66,7 @@
           background-image: url('images/sections/section2/foto_container6.jpg');
         ">
       <div class="info">
-        <h2>Locação Container Para Obra</h2>
+        <h2>Locação de Container Para Obras</h2>
         <p>
           Locação de containers com banheiro interno, prontos para uso em
           obras, eventos ou espaços temporários. Os banheiros são projetados
@@ -75,29 +76,36 @@
         <p>Dimensões: 4 m x 2 m x 2 m</p>
         <p>Mensalidade: R$ 420,00</p>
         <p>Locação mínima: 90 dias</p>
+        <div class="pagamento">
+          <span><i class="fa-brands fa-pix"></i> PIX</span>
+          <span><i class="fa-regular fa-credit-card"></i> Cartão de crédito</span>
+        </div>
+        <div class="desconto">
+          <p>Pague os 90 dias antecipados no PIX e ganhe um desconto especial!</p>
+        </div>
         <a href="https://wa.me/5519996842183" class="whatsapp-button2" target="_blank" rel="noopener noreferrer">
-          Alugar agora
+          Alugue o seu
           <img src="images/wp_icon.png" alt="Icone WhatsApp" class="whatsapp-icon" />
         </a>
       </div>
       <div class="gallery">
         <div class="square">
-          <img src="images/sections/section2/foto_container1.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container1.jpg" loading="eager" alt="Container sanitário para obra - foto 1" />
         </div>
         <div class="square">
-          <img src="images/sections/section2/foto_container2.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container2.jpg" loading="lazy" alt="Container sanitário para obra - foto 2" />
         </div>
         <div class="square">
-          <img src="images/sections/section2/foto_container3.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container3.jpg" loading="lazy" alt="Container sanitário para obra - foto 3" />
         </div>
         <div class="square">
-          <img src="images/sections/section2/foto_container4.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container4.jpg" loading="lazy" alt="Container sanitário para obra - foto 4" />
         </div>
         <div class="square">
-          <img src="images/sections/section2/foto_container5.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container5.jpg" loading="lazy" alt="Container sanitário para obra - foto 5" />
         </div>
         <div class="square">
-          <img src="images/sections/section2/foto_container6.jpg" loading="lazy" />
+          <img src="images/sections/section2/foto_container6.jpg" loading="lazy" alt="Container sanitário para obra - foto 6" />
         </div>
       </div>
     </section>
@@ -106,7 +114,7 @@
           background-image: url('images/sections/section1/foto_casa_modular4.jpg');
         ">
       <div class="info">
-        <h1>Casa Modular Container</h1>
+        <h1>Venda de Casa Modular Container</h1>
         <p>Nosso kit modular completo é uma solução inteligente para quem busca construir casas, escritórios ou lojas
           com rapidez. Conta com estrutura em aço de alta resistência e isolamento térmico em lã de vidro, garantindo
           máxima durabilidade, conforto térmico e excelente isolamento acústico em qualquer clima. O design é totalmente
@@ -133,36 +141,36 @@
       </div>
       <div class="gallery">
         <div class="square">
-          <img src="images/sections/section1/foto_casa_modular2.jpg" loading="lazy"
-            data-src="images/sections/section1/foto_casa_modular2.jpg" />
+          <img src="images/sections/section1/foto_casa_modular2.jpg" loading="eager"
+            data-src="images/sections/section1/foto_casa_modular2.jpg" alt="Casa modular container - foto 1" />
         </div>
         <div class="square">
           <img src="images/sections/section1/foto_casa_modular4.jpg" loading="lazy"
-            data-src="images/sections/section1/foto_casa_modular4.jpg" />
+            data-src="images/sections/section1/foto_casa_modular4.jpg" alt="Casa modular container - foto 2" />
         </div>
         <div class="square">
           <img src="images/sections/section1/foto_casa_modular1.jpg" loading="lazy"
-            data-src="images/sections/section1/foto_casa_modular1.jpg" />
+            data-src="images/sections/section1/foto_casa_modular1.jpg" alt="Casa modular container - foto 3" />
         </div>
         <div class="square">
           <img src="images/sections/section1/foto_casa_modular3.jpg" loading="lazy"
-            data-src="images/sections/section1/foto_casa_modular3.jpg" />
+            data-src="images/sections/section1/foto_casa_modular3.jpg" alt="Casa modular container - foto 4" />
         </div>
         <div class="square">
           <img src="images/sections/section1/miniatura_video_casa_modular2.jpg" data-type="video"
-            data-src="images/sections/section1/video_casa_modular2.mp4" />
+            data-src="images/sections/section1/video_casa_modular2.mp4" alt="Vídeo da casa modular - miniatura 1" />
         </div>
         <div class="square">
           <img src="images/sections/section1/miniatura_video_casa_modular1.jpg" data-type="video"
-            data-src="images/sections/section1/video_casa_modular1.mp4" />
+            data-src="images/sections/section1/video_casa_modular1.mp4" alt="Vídeo da casa modular - miniatura 2" />
         </div>
         <div class="square">
           <img src="images/sections/section1/miniatura_video_casa_modular4.jpg" data-type="video"
-            data-src="images/sections/section1/video_casa_modular4.mp4" />
+            data-src="images/sections/section1/video_casa_modular4.mp4" alt="Vídeo da casa modular - miniatura 3" />
         </div>
         <div class="square">
           <img src="images/sections/section1/miniatura_video_casa_modular3.jpg" data-type="video"
-            data-src="images/sections/section1/video_casa_modular3.mp4" />
+            data-src="images/sections/section1/video_casa_modular3.mp4" alt="Vídeo da casa modular - miniatura 4" />
         </div>
       </div>
     </section>
@@ -171,7 +179,7 @@
           background-image: url('images/sections/section3/foto_munck7.jpg');
         ">
       <div class="info">
-        <h2>Locação Caminhão Munck</h2>
+        <h2>Serviço de Caminhão Munck</h2>
         <p>
           Caminhão Munck para locação, indicado para serviços que envolvem
           movimentação, elevação ou apoio operacional em diferentes contextos.
@@ -183,31 +191,31 @@
         <p>Capacidade: 2 Toneladas</p>
         <p>Altura máxima: 15 Metros</p>
         <a href="https://wa.me/5519996842183" class="whatsapp-button2" target="_blank" rel="noopener noreferrer">
-          Solicitar orçamento
+          Solicite um orçamento
           <img src="images/wp_icon.png" alt="Icone WhatsApp" class="whatsapp-icon" />
         </a>
       </div>
       <div class="gallery">
         <div class="square">
-          <img src="images/sections/section3/foto_munck1.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck1.jpg" loading="eager" alt="Caminhão Munck - foto 1" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck2.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck2.jpg" loading="lazy" alt="Caminhão Munck - foto 2" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck3.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck3.jpg" loading="lazy" alt="Caminhão Munck - foto 3" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck4.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck4.jpg" loading="lazy" alt="Caminhão Munck - foto 4" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck5.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck5.jpg" loading="lazy" alt="Caminhão Munck - foto 5" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck6.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck6.jpg" loading="lazy" alt="Caminhão Munck - foto 6" />
         </div>
         <div class="square">
-          <img src="images/sections/section3/foto_munck7.jpg" loading="lazy" />
+          <img src="images/sections/section3/foto_munck7.jpg" loading="lazy" alt="Caminhão Munck - foto 7" />
         </div>
       </div>
     </section>
@@ -277,7 +285,7 @@
       </video>
     </div>
 
-    <div id="caption"></div>
+  
   </div>
 
   <script src="script.js"></script>
