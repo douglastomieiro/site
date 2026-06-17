@@ -10,18 +10,18 @@
 /* === Variáveis === */
 :root {
   --font: 'Roboto', system-ui, sans-serif;
-  --red: #CC1111;
-  --red-dark: #AA0D0D;
-  --red-bg: #FFF1F1;
-  --red-border: #F5CCCC;
-  --steel: #727278;
-  --steel-bg: #F2F2F4;
-  --dark: #1A1A1A;
-  --text: #333333;
-  --muted: #686868;
-  --bg: #F0EFEB;
-  --card: #FFFFFF;
-  --border: #E5E3DF;
+  --red: #E03030;
+  --red-dark: #C02222;
+  --red-bg: #2A1212;
+  --red-border: #4A2020;
+  --steel: #8A8A92;
+  --steel-bg: #50525A;
+  --dark: #F6F5F3;
+  --text: #EDECEA;
+  --muted: #C2C1C8;
+  --bg: #2B2C30;
+  --card: #34363B;
+  --border: #46484F;
   --wp: #25D366;
   --wp-dark: #1DA851;
   --radius-sm: 8px;
@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
+  background: #E2E0DB;
 }
 
 body {
@@ -42,7 +42,8 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.10);
+  padding-bottom: 16px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.50);
 }
 
 body.opacidade { opacity: 0; transition: opacity 0.9s ease; }
@@ -56,7 +57,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(58, 60, 66, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -123,7 +124,7 @@ header nav {
   top: 100%;
   left: 0;
   right: 0;
-  background: #fff;
+  background: var(--card);
   border-bottom: 1px solid var(--border);
   padding: 6px 14px 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -178,7 +179,7 @@ header nav ul li a.active {
     display: flex;
     flex-direction: column;
     padding: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
   }
 
   /* Galeria: 1ª foto como capa */
@@ -191,9 +192,9 @@ header nav ul li a.active {
     background: var(--steel-bg);
   }
 
-  #container .gallery   { background: #F5EFEE; }
-  #casaModular .gallery { background: #EEEEED; }
-  #munck .gallery       { background: #EBEBEA; }
+  #container .gallery   { background: #2E3035; }
+  #casaModular .gallery { background: #2C2E33; }
+  #munck .gallery       { background: #2E2E35; }
 
   .section .gallery::after {
     content: '📷  Ver todas as fotos';
@@ -320,14 +321,14 @@ header nav ul li a.active {
 .section .info .desconto {
   margin: 10px 0 4px;
   padding: 10px 14px;
-  background: #F0FFF5;
-  border: 1px solid #A8E6C0;
+  background: #0C2218;
+  border: 1px solid #1B4030;
   border-radius: var(--radius-md);
 }
 
 .section .info .desconto p {
   font-size: 12.5px;
-  color: #1A6B3A;
+  color: #4ADE80;
   text-align: center;
   line-height: 1.55;
   font-weight: 600;
@@ -349,7 +350,7 @@ header nav ul li a.active {
 
 .section .info .enfase p {
   font-size: 12.5px;
-  color: #991111;
+  color: #E07070;
   text-align: center;
   line-height: 1.55;
   font-weight: 500;
@@ -392,8 +393,8 @@ header nav ul li a.active {
   justify-content: center;
   gap: 8px;
   padding: 12px 18px;
-  background: #fff;
-  color: var(--dark);
+  background: var(--steel-bg);
+  color: var(--text);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   font-size: 14px;
@@ -454,7 +455,7 @@ footer {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  margin: 10px 10px 16px;
+  margin: 10px 10px 40px;
   padding: 18px 16px 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
@@ -627,7 +628,7 @@ footer {
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
   }
 
   /* Capa maior no desktop */
@@ -736,7 +737,7 @@ footer {
 
   /* Footer */
   footer {
-    margin: 16px 16px 20px;
+    margin: 16px 16px 60px;
     border-radius: var(--radius-xl);
     padding: 24px 32px 28px;
   }
