@@ -32,12 +32,16 @@
 
 html {
   scroll-behavior: smooth;
-  background: #E2E0DB;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 35%),
+    linear-gradient(135deg, #e5e5e5, #a9a9a9 50%, #eeeeee);
 }
 
 body {
   font-family: var(--font);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 35%),
+    linear-gradient(135deg, #2F3035, #252628 50%, #2D2F34);
   overflow-x: hidden;
   width: 100%;
   max-width: 1200px;
@@ -57,30 +61,32 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(58, 60, 66, 0.97);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(135deg, rgba(62,64,70,0.97), rgba(52,54,60,0.97) 50%, rgba(60,62,68,0.97));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  padding: 10px 14px;
+  padding: 6px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  min-height: 60px;
+  min-height: 48px;
 }
 
 .texto-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
-header .logo { height: 36px; width: auto; }
+header .logo { height: 28px; width: auto; }
 
 .texto-header p {
-  font-size: 9.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--dark);
   letter-spacing: 0.2px;
@@ -124,7 +130,9 @@ header nav {
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--card);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 40%),
+    linear-gradient(135deg, #38393F, #2E3035 50%, #373840);
   border-bottom: 1px solid var(--border);
   padding: 6px 14px 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -170,8 +178,9 @@ header nav ul li a.active {
    ============================================================ */
 @media (max-width: 899px) {
   .section {
-    background-image: none !important;
-    background-color: var(--card) !important;
+    background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 40%),
+      linear-gradient(135deg, #38393F, #2E3035 50%, #373840) !important;
     border-radius: var(--radius-xl);
     margin: 10px 10px 0;
     overflow: hidden;
@@ -184,7 +193,6 @@ header nav ul li a.active {
 
   /* Galeria: 1ª foto como capa */
   .section .gallery {
-    order: -1;
     position: relative;
     display: block;
     padding: 0;
@@ -195,6 +203,22 @@ header nav ul li a.active {
   #container .gallery   { background: #2E3035; }
   #casaModular .gallery { background: #2C2E33; }
   #munck .gallery       { background: #2E2E35; }
+
+  .section .gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: linear-gradient(to bottom,
+      rgba(46,48,53,0.95) 0%,
+      rgba(46,48,53,0.60) 35%,
+      rgba(46,48,53,0.20) 68%,
+      transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
 
   .section .gallery::after {
     content: '📷  Ver todas as fotos';
@@ -371,7 +395,9 @@ header nav ul li a.active {
   justify-content: center;
   gap: 8px;
   padding: 13px 18px;
-  background: var(--wp);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(135deg, #28D96A, #1FC05C 50%, #25D466);
   color: #fff;
   border-radius: var(--radius-md);
   font-size: 15px;
@@ -379,12 +405,12 @@ header nav ul li a.active {
   font-family: var(--font);
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: filter 0.2s, transform 0.15s;
   animation: none;
   text-decoration: none;
 }
 
-.whatsapp-button2:hover { background: var(--wp-dark); transform: scale(1.01); }
+.whatsapp-button2:hover { filter: brightness(0.88); transform: scale(1.01); }
 .whatsapp-button2 img.whatsapp-icon { width: 20px; height: 20px; margin-left: 0; }
 
 .casacontainer {
@@ -393,7 +419,9 @@ header nav ul li a.active {
   justify-content: center;
   gap: 8px;
   padding: 12px 18px;
-  background: var(--steel-bg);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 45%),
+    linear-gradient(135deg, #55575F, #484A52 50%, #52545C);
   color: var(--text);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
@@ -401,12 +429,12 @@ header nav ul li a.active {
   font-weight: 500;
   font-family: var(--font);
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  transition: border-color 0.2s, filter 0.2s, color 0.2s;
   animation: none;
   text-decoration: none;
 }
 
-.casacontainer:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+.casacontainer:hover { border-color: var(--red); color: var(--red); filter: brightness(0.92); }
 
 /* ============================================================
    BOTÃO FLUTUANTE WHATSAPP
@@ -417,7 +445,9 @@ header nav ul li a.active {
   right: 16px;
   height: 52px;
   min-width: 52px;
-  background: var(--wp);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(135deg, #28D96A, #1FC05C 50%, #25D466);
   border-radius: 26px;
   display: flex;
   align-items: center;
@@ -426,11 +456,11 @@ header nav ul li a.active {
   z-index: 999;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.40);
   overflow: hidden;
-  transition: background 0.2s;
+  transition: filter 0.2s;
   text-decoration: none;
 }
 
-.whatsapp-button:hover { background: var(--wp-dark); }
+.whatsapp-button:hover { filter: brightness(0.88); }
 .whatsapp-button img { width: 26px; height: 26px; flex-shrink: 0; }
 
 .whatsapp-button::after {
@@ -451,8 +481,19 @@ header nav ul li a.active {
 /* ============================================================
    RODAPÉ
    ============================================================ */
+.footer-credit {
+  text-align: center;
+  padding: 10px 0 4px;
+  font-size: 11px;
+  color: #2F3036;
+  letter-spacing: 1px;
+  font-family: monospace;
+}
+
 footer {
-  background: var(--card);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 40%),
+    linear-gradient(135deg, #38393F, #2E3035 50%, #373840);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   margin: 10px 10px 40px;
@@ -495,9 +536,24 @@ footer {
   transition: transform 0.2s, filter 0.2s;
 }
 
-.facebook-button { background: #1877f2; color: #fff; }
-.instagram-button { background: #e4405f; color: #fff; }
-.bitcoin-button   { background: #f7931a; color: #fff; }
+.facebook-button {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(135deg, #1A7FF5, #1569D8 50%, #1875EE);
+  color: #fff;
+}
+.instagram-button {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(135deg, #E84A67, #D03555 50%, #E23D5C);
+  color: #fff;
+}
+.bitcoin-button {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(135deg, #F89B25, #E08510 50%, #F59018);
+  color: #fff;
+}
 
 .facebook-button:hover,
 .instagram-button:hover,
@@ -610,9 +666,9 @@ footer {
 @media (min-width: 900px) {
 
   /* Header */
-  header { padding: 14px 32px; min-height: 68px; }
-  header .logo { height: 48px; }
-  .texto-header p { font-size: 11px; }
+  header { padding: 8px 32px; min-height: 52px; }
+  header .logo { height: 34px; }
+  .texto-header p { font-size: 15px; }
   .nav-toggle { display: none; }
 
   header nav {
@@ -633,31 +689,49 @@ footer {
     font-weight: 500;
     border: 1px solid var(--border);
     background: transparent;
-    color: var(--muted);
+    color: var(--text);
   }
 
   header nav ul li a:hover { background: var(--red); color: #fff; border-color: var(--red); }
-  header nav ul li a.active { background: var(--red-bg); color: var(--red); border-color: var(--red-border); font-weight: 700; }
 
-  /* Seções: cards maiores, margem mais generosa */
+  /* Seções: texto à esquerda, foto à direita */
   .section {
-    background-image: none !important;
-    background-color: var(--card) !important;
+    background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 40%),
+      linear-gradient(135deg, #38393F, #2E3035 50%, #373840) !important;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 16px 16px 0;
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    min-height: 320px;
   }
 
-  /* Capa maior no desktop */
   .section .gallery {
-    order: -1;
-    display: block;
+    width: 44%;
+    flex-shrink: 0;
     position: relative;
     background: var(--steel-bg);
+  }
+
+  /* Gradiente da esquerda para a direita na borda da foto */
+  .section .gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    height: 100%;
+    background: linear-gradient(to right,
+      rgba(46,48,53,0.95) 0%,
+      rgba(46,48,53,0.60) 35%,
+      rgba(46,48,53,0.20) 68%,
+      transparent 100%);
+    z-index: 1;
+    pointer-events: none;
   }
 
   .section .gallery::after {
@@ -676,13 +750,21 @@ footer {
 
   .section .gallery .square {
     width: 100%;
-    aspect-ratio: 16 / 6;
-    height: auto;
+    height: 100%;
     overflow: hidden;
     border-radius: 0;
     cursor: pointer;
   }
 
+  .section .gallery .square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .section .gallery .square:hover img { transform: scale(1.03); }
   .section .gallery .square:not(:first-child) { display: none; }
 
   .section .gallery .square img {

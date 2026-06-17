@@ -50,22 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- 4. INDICADOR DE SEÇÃO ATIVA NO NAV ---
-  const sections = document.querySelectorAll(".section");
-  const navLinks = document.querySelectorAll("header nav ul li a");
-
-  const activeSectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach(link => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-        });
-      }
-    });
-  }, { threshold: 0.45 });
-
-  sections.forEach(s => activeSectionObserver.observe(s));
 
   // --- 5. BOTÃO WP FLUTUANTE — expande quando o usuário para de rolar ---
   const wpFloat = document.querySelector(".whatsapp-button");
