@@ -99,10 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.className = "modal-next";
     prevBtn.innerHTML = "&#8249;";
     nextBtn.innerHTML = "&#8250;";
-    modal.append(prevBtn, nextBtn);
+
+    const swipeHint = document.createElement("div");
+    swipeHint.className = "modal-swipe-hint";
+    swipeHint.textContent = "← Arraste para navegar →";
+
+    modal.append(prevBtn, nextBtn, swipeHint);
 
     const closeModalFunc = () => {
       modal.style.display = "none";
+      document.body.style.overflow = "";
       modalVideo.pause();
       modalVideo.src = "";
     };
@@ -134,7 +140,23 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = idx;
         renderItem(idx);
         modal.style.display = "block";
+        document.body.style.overflow = "hidden";
       });
+    });
+
+    // Swipe touch
+    let touchStartX = 0;
+    modal.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    modal.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+    }, { passive: false });
+
+    modal.addEventListener("touchend", (e) => {
+      const delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 50) navigate(delta < 0 ? 1 : -1);
     });
 
     prevBtn.onclick = (e) => { e.stopPropagation(); navigate(-1); };

@@ -581,6 +581,27 @@ footer {
 #imageModal .modal-prev { left: 12px; }
 #imageModal .modal-next { right: 12px; }
 
+.modal-swipe-hint {
+  display: none;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 899px) {
+  #imageModal .modal-prev,
+  #imageModal .modal-next { display: none; }
+  .modal-swipe-hint { display: block; }
+}
+
 
 /* ============================================================
    DESKTOP (≥ 900px) — versão mobile escalada
