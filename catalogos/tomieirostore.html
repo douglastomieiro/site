@@ -3,24 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Baixando arquivo...</title>
+  <title>Catálogo Tomieiro Store</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { width: 100%; height: 100%; overflow: hidden; }
+    embed { display: block; width: 100%; height: 100vh; }
+  </style>
 </head>
 
 <body>
-  <script>
-    const link = document.createElement('a');
-    link.href = '/catalogos/CATALOGO TOMIEIRO STORE.pdf';
-    link.download = 'CATALOGO TOMIEIRO STORE.pdf';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-
-    setTimeout(() => {
-      window.location.href = 'https://linktr.ee/tomieirostore';
-    }, 800);
-  </script>
-
-  <p>O download deve começar automaticamente...</p>
+  <embed src="/catalogos/CATALOGO TOMIEIRO STORE.pdf" type="application/pdf" width="100%" height="100%" />
 </body>
 
 </html>
