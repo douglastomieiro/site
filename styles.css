@@ -33,22 +33,74 @@
 
 html {
   scroll-behavior: smooth;
+  background: #202124;
+}
+
+/* === Fundo animado (canvas de fundo) === */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 35%),
-    linear-gradient(135deg, #e5e5e5, #a9a9a9 50%, #eeeeee);
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(70, 72, 79, 0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(60, 62, 68, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, transparent 40%, rgba(24, 25, 28, 0.6) 100%);
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 65% at 50% 50%, transparent 50%, rgba(18, 19, 21, 0.7) 100%);
+}
+
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  z-index: 200;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, #46484F 30%, #8A8A92 50%, #46484F 70%, transparent 100%);
+  opacity: 0.5;
+  animation: linePulse 6s ease-in-out infinite;
+}
+
+@keyframes linePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #bg-canvas { display: none; }
+  .top-line { animation: none; opacity: 0.4; }
 }
 
 body {
   font-family: var(--font);
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 35%),
-    linear-gradient(135deg, #2F3035, #252628 50%, #2D2F34);
   overflow-x: hidden;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 16px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.50);
 }
 
 body.opacidade { opacity: 0; transition: opacity 0.9s ease; }
@@ -62,18 +114,27 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 40%),
-    linear-gradient(135deg, rgba(62,64,70,0.97), rgba(52,54,60,0.97) 50%, rgba(60,62,68,0.97));
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
   padding: 6px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   min-height: 48px;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(135deg, rgba(62,64,70,0.97), rgba(52,54,60,0.97) 50%, rgba(60,62,68,0.97));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
 
 .texto-header {
